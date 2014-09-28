@@ -32,10 +32,43 @@ class ViewController: UIViewController {
 
         feedScrollView.contentSize = CGSize (width: 320, height: scrollHeight)
         
-        print(scrollHeight)
+
         
-        print(feedScrollView.contentSize)
+
     
+    
+    }
+    @IBAction func panMessage(panGestureRecognizer: UIPanGestureRecognizer) {
+
+        //get velocity, location and translation
+        
+        var point = panGestureRecognizer.locationInView(view)
+        var translation = panGestureRecognizer.translationInView(view)
+        var velocity = panGestureRecognizer.velocityInView(view)
+        
+        //start settings the animations
+        
+        if panGestureRecognizer.state == UIGestureRecognizerState.Began {
+            println("Gesture began at: \(point)")
+            
+            
+            
+        } else if panGestureRecognizer.state == UIGestureRecognizerState.Changed {
+            
+            
+            // make the message move
+            messageImage.frame.origin.x = translation.x
+            println("Gesture changed at: \(point)")
+            
+            
+            
+            
+        } else if panGestureRecognizer.state == UIGestureRecognizerState.Ended {
+            println("Gesture ended at: \(point)")
+        }
+        
+    
+        
     
     }
 

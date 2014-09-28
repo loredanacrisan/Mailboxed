@@ -10,11 +10,25 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Mailboxed/ViewController.swift"
-            timestampString = "433576040.106384"
+            timestampString = "433577903.748008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49">
+            startingLineNumber = "82"
+            endingLineNumber = "82">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mailboxed/ViewController.swift"
+            timestampString = "433577903.748008"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
