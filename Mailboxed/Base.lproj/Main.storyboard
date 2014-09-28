@@ -63,9 +63,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1540"/>
                     <connections>
+                        <outlet property="archiveIconImage" destination="1XJ-qj-pfq" id="frn-x4-wRg"/>
                         <outlet property="feedScrollView" destination="yyX-V8-FQd" id="ook-vH-J3P"/>
                         <outlet property="helpImage" destination="SY3-14-4Dg" id="rWu-I4-Drj"/>
+                        <outlet property="laterIconImage" destination="WdP-j8-YNv" id="cNd-SV-hgS"/>
                         <outlet property="messageImage" destination="BCc-qu-V26" id="vNT-Gs-cSu"/>
+                        <outlet property="messageView" destination="Ndk-J6-BKi" id="iY8-dL-SdM"/>
                         <outlet property="messagesImage" destination="3x3-tg-ZaD" id="cM3-2G-avi"/>
                         <outlet property="searchImage" destination="uCz-8H-Yuq" id="mqH-hh-ERy"/>
                     </connections>
