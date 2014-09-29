@@ -57,6 +57,22 @@
                                     </view>
                                 </subviews>
                             </scrollView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list" id="282-iw-kVV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="FZ4-GA-p94" appends="YES" id="rWR-2T-RFA"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reschedule" id="uaw-rp-cSg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="CiC-7O-8cJ" appends="YES" id="GOR-bi-tjA"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -67,9 +83,11 @@
                         <outlet property="feedScrollView" destination="yyX-V8-FQd" id="ook-vH-J3P"/>
                         <outlet property="helpImage" destination="SY3-14-4Dg" id="rWu-I4-Drj"/>
                         <outlet property="laterIconImage" destination="WdP-j8-YNv" id="cNd-SV-hgS"/>
+                        <outlet property="listImage" destination="282-iw-kVV" id="FKl-MW-BrE"/>
                         <outlet property="messageImage" destination="BCc-qu-V26" id="vNT-Gs-cSu"/>
                         <outlet property="messageView" destination="Ndk-J6-BKi" id="iY8-dL-SdM"/>
                         <outlet property="messagesImage" destination="3x3-tg-ZaD" id="cM3-2G-avi"/>
+                        <outlet property="rescheduleImage" destination="uaw-rp-cSg" id="2lQ-7r-IOQ"/>
                         <outlet property="searchImage" destination="uCz-8H-Yuq" id="mqH-hh-ERy"/>
                     </connections>
                 </viewController>
@@ -79,6 +97,16 @@
                         <action selector="panMessage:" destination="MJQ-bo-hIO" id="Wvm-9D-bvS"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="FZ4-GA-p94" userLabel="List Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="onTapList:" destination="MJQ-bo-hIO" id="Spu-0U-zC1"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="CiC-7O-8cJ" userLabel="Reschedule Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="onTapReschedule:" destination="MJQ-bo-hIO" id="6xV-hf-vY5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="227" y="-183"/>
         </scene>
@@ -88,8 +116,10 @@
         <image name="feed" width="320" height="1202"/>
         <image name="help_label" width="320" height="37"/>
         <image name="later_icon" width="25" height="25"/>
+        <image name="list" width="320" height="568"/>
         <image name="message" width="320" height="86"/>
         <image name="nav" width="320" height="65"/>
+        <image name="reschedule" width="320" height="568"/>
         <image name="search" width="320" height="42"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var archiveIconImage: UIImageView!
     @IBOutlet weak var messageView: UIView!
     
+    @IBOutlet weak var rescheduleImage: UIImageView!
+    @IBOutlet weak var listImage: UIImageView!
     
     var messageX: CGFloat!
     var state: String!
@@ -40,12 +42,29 @@ class ViewController: UIViewController {
 
         feedScrollView.contentSize = CGSize (width: 320, height: scrollHeight)
         
+        rescheduleImage.alpha = 0
+        listImage.alpha = 0
+        
+      
+        
 
         
 
     
     
     }
+    @IBAction func onTapReschedule(sender: UITapGestureRecognizer) {
+        print ("tapped list")
+        rescheduleImage.alpha = 0
+    }
+    
+    @IBAction func onTapList(sender: UITapGestureRecognizer) {
+        print ("tapped list")
+        listImage.alpha = 0
+        
+    }
+    
+    
     
     
     //begin pan actions
@@ -56,6 +75,8 @@ class ViewController: UIViewController {
         var point = panGestureRecognizer.locationInView(view)
         var translation = panGestureRecognizer.translationInView(view)
         var velocity = panGestureRecognizer.velocityInView(view)
+        
+
   
         
         
@@ -193,40 +214,74 @@ class ViewController: UIViewController {
                 }, completion: {
                 (value: Bool) in
                 
-                
+                print("reset")
+                    
                 UIView.animateWithDuration(0.4, animations: {
-                    self.messagesImage.frame.origin.y -= 86
+                    self.messageImage.frame.origin.y -= 86
                     }, completion: {
                         (value: Bool) in
-                        self.messagesImage.frame.origin.y += 86
-                        //bring the view back, have to complete it after animation is done
-                        self.messageView.frame.origin.x = 0
+                        self.messageImage.frame.origin.y += 86
+                        self.messageImage.frame.origin.x = 0
                         
                 })
-                
+            
             })
                 
-            } else if state == "later" || state == "todo" {
+            } else if state == "later" {
+                print("later")
                 
                 UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: {
                     () -> Void in
                     self.messageImage.frame.origin.x = -350
                     self.laterIconImage.frame.origin.x = -350
                     }, completion: {
-                        (value: Bool) in
                         
+                       
+                        
+                        (value: Bool) in
+                         print("reset")
+                        
+                
                         
                 UIView.animateWithDuration(0.4, animations: {
-                    self.messagesImage.frame.origin.y -= 86
+                    self.messageImage.frame.origin.y -= 86
                     }, completion: {
                         (value: Bool) in
-                        self.messagesImage.frame.origin.y += 86
-                        //bring the view back, have to complete it after animation is done
-                        self.messageView.frame.origin.x = 0
+                        self.messageImage.frame.origin.y += 86
+                        self.messageImage.frame.origin.x = 0
+                        self.rescheduleImage.alpha = 1
                         
                 })
 
         })
+                
+            } else if state == "todo" {
+                print("todo")
+                
+                UIView.animateWithDuration(0.4, delay: 0, options: nil, animations: {
+                    () -> Void in
+                    self.messageImage.frame.origin.x = -350
+                    self.laterIconImage.frame.origin.x = -350
+                    }, completion: {
+                        
+                        
+                        
+                        (value: Bool) in
+                        print("reset")
+                        
+                        
+                        
+                        UIView.animateWithDuration(0.4, animations: {
+                            self.messageImage.frame.origin.y -= 86
+                            }, completion: {
+                                (value: Bool) in
+                                self.messageImage.frame.origin.y += 86
+                                self.messageImage.frame.origin.x = 0
+                                self.listImage.alpha = 1
+                                
+                        })
+                        
+                })
                 
             }
 
