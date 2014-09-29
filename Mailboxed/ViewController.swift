@@ -44,6 +44,7 @@ class ViewController: UIViewController {
         
         rescheduleImage.alpha = 0
         listImage.alpha = 0
+
         
       
         
@@ -55,12 +56,36 @@ class ViewController: UIViewController {
     }
     @IBAction func onTapReschedule(sender: UITapGestureRecognizer) {
         print ("tapped list")
-        rescheduleImage.alpha = 0
+        UIView.animateWithDuration(0.2, animations: {
+            self.rescheduleImage.alpha = 0
+            self.messagesImage.frame.origin.y -= 86
+            },
+            
+            completion: {
+                (value: Bool) in
+            self.messagesImage.frame.origin.y += 86
+            self.messageImage.frame.origin.x = 0
+        
+        })
+
     }
     
     @IBAction func onTapList(sender: UITapGestureRecognizer) {
         print ("tapped list")
-        listImage.alpha = 0
+        UIView.animateWithDuration(0.2, animations: {
+            self.listImage.alpha = 0
+            self.messagesImage.frame.origin.y -= 86
+            },
+            
+            completion: {
+                (value: Bool) in
+                self.messagesImage.frame.origin.y += 86
+                self.messageImage.frame.origin.x = 0
+                
+        })
+
+
+        
         
     }
     
@@ -85,6 +110,9 @@ class ViewController: UIViewController {
         if panGestureRecognizer.state == UIGestureRecognizerState.Began {
             println("Gesture began at: \(point)")
             
+            laterIconImage.alpha = 0
+            archiveIconImage.alpha = 0
+            
             //set default state for icons
 
             messageView.backgroundColor = UIColor(white:0.87, alpha:1.0)
@@ -92,8 +120,7 @@ class ViewController: UIViewController {
             laterIconImage.frame.origin.x = CGFloat(280)
             archiveIconImage.image = UIImage(named: "archive_icon")
             laterIconImage.image = UIImage(named: "later_icon")
-            laterIconImage.alpha = 1
-            archiveIconImage.alpha = 1
+
             
             
             
@@ -217,11 +244,12 @@ class ViewController: UIViewController {
                 print("reset")
                     
                 UIView.animateWithDuration(0.4, animations: {
-                    self.messageImage.frame.origin.y -= 86
+                    self.messagesImage.frame.origin.y -= 86
                     }, completion: {
                         (value: Bool) in
-                        self.messageImage.frame.origin.y += 86
                         self.messageImage.frame.origin.x = 0
+                        self.messagesImage.frame.origin.y += 86
+                        
                         
                 })
             
@@ -244,12 +272,15 @@ class ViewController: UIViewController {
                 
                         
                 UIView.animateWithDuration(0.4, animations: {
-                    self.messageImage.frame.origin.y -= 86
+                    
+                    self.messagesImage.frame.origin.y -= 86
+                    self.rescheduleImage.alpha = 1
+                    
                     }, completion: {
                         (value: Bool) in
-                        self.messageImage.frame.origin.y += 86
+                        self.messagesImage.frame.origin.y += 86
                         self.messageImage.frame.origin.x = 0
-                        self.rescheduleImage.alpha = 1
+                        
                         
                 })
 
