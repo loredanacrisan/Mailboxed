@@ -10,6 +10,8 @@ Required interactions completed: all
 
 Optional interactions completed: none
 
+![my gif](https://github.com/loredanacrisan/Mailboxed/blob/master/week3-homework.gif)
+
 
 
 
